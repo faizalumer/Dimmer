@@ -2,9 +2,10 @@
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
     android:minWidth="40dp"
     android:minHeight="40dp" 
-    android:updatePeriodMillis="0"
+    android:updatePeriodMillis="43200000"
     android:initialLayout="@layout/widget"
     android:previewImage="@drawable/ic_widget_on"
     >
-    
+    <!-- Set the updatePeriodMillis to 43200000, which is 12 hours, 
+    in an attempt to workaround the issue of widget not responding -->
 </appwidget-provider>
