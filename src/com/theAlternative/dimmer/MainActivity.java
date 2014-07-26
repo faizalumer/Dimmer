@@ -18,7 +18,6 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.SeekBar;
 import android.widget.Spinner;
-import android.widget.Toast;
 import android.widget.ToggleButton;
 
 public class MainActivity extends ActionBarActivity {
@@ -61,7 +60,7 @@ public class MainActivity extends ActionBarActivity {
 				SharedPreferences.Editor editor = settings.edit();
 				editor.putInt(Constants.PREFERENCES_KEY_TIMER, Integer.valueOf(selected));
 				editor.commit();
-				if(BuildConfig.DEBUG){Toast.makeText(MainActivity.this, selected, Toast.LENGTH_SHORT).show();}
+				if(BuildConfig.DEBUG){Log.d("faizal","selected timer : " + selected);}
 				
 				//if the service is already running, tell the service to update the timer.
 				if(DimmerService.isInstanceCreated()){
@@ -75,7 +74,7 @@ public class MainActivity extends ActionBarActivity {
 
 			@Override
 			public void onNothingSelected(AdapterView<?> arg0) {
-				if(BuildConfig.DEBUG){Toast.makeText(MainActivity.this, "no selection", Toast.LENGTH_SHORT).show();}
+				if(BuildConfig.DEBUG){Log.d("faizal","no timer selected");}
 				
 			}
 			

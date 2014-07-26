@@ -105,7 +105,7 @@ public class DimmerService extends Service {
 		alarm.set(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis() + (1000 * timerValue * 60)
 				, pendingIntent);
 		
-		Toast.makeText(this, "Dimmer will turn off in " + timerValue + " minutes", Toast.LENGTH_SHORT).show();
+		Toast.makeText(this, "Dimmer will turn off in " + timerValue + " minute(s)", Toast.LENGTH_SHORT).show();
 	}
 	
 	private void cancelTurnOffTimer(){
