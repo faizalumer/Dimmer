@@ -47,12 +47,12 @@ public class WidgetProvider extends AppWidgetProvider{
 		
 		if (appWidgetIds != null && appWidgetIds.length > 0) {
 			if (action.equals(DimmerService.SERVICE_STARTED_INTENT_FILTER)) {
-				if(BuildConfig.DEBUG){Toast.makeText(context, "Dimmer started", Toast.LENGTH_SHORT).show();}
+				if(BuildConfig.DEBUG){Log.d("faizal","WidgetProvider : onReceive : started");}
 				views.setImageViewResource(R.id.btn_widget_dimmer_toggle, R.drawable.ic_widget_on);
 				appWidgetManager.updateAppWidget(appWidgetIds, views);
 			}
 			else if (action.equals(DimmerService.SERVICE_STOPPED_INTENT_FILTER)) {
-				if(BuildConfig.DEBUG){Toast.makeText(context, "Dimmer stopped", Toast.LENGTH_SHORT).show();}
+				if(BuildConfig.DEBUG){Log.d("faizal","WidgetProvider : onReceive : stopped");}
 				views.setImageViewResource(R.id.btn_widget_dimmer_toggle, R.drawable.ic_widget_off);
 				appWidgetManager.updateAppWidget(appWidgetIds, views);
 			}

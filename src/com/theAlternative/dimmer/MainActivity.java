@@ -57,16 +57,23 @@ public class MainActivity extends ActionBarActivity {
 				
 				//Add the selected timer value to sharedPreferences
 				SharedPreferences settings = getSharedPreferences(Constants.PREFERENCES_NAME, 0);
+				int timerValue_old = settings.getInt(Constants.PREFERENCES_KEY_TIMER,DimmerService.DEFAULT_TIMER_MINS);
+				int timerValue_new = Integer.valueOf(selected);
 				SharedPreferences.Editor editor = settings.edit();
-				editor.putInt(Constants.PREFERENCES_KEY_TIMER, Integer.valueOf(selected));
+				editor.putInt(Constants.PREFERENCES_KEY_TIMER, timerValue_new);
 				editor.commit();
 				if(BuildConfig.DEBUG){Log.d("faizal","selected timer : " + selected);}
 				
 				//if the service is already running, tell the service to update the timer.
 				if(DimmerService.isInstanceCreated()){
-					Intent intent = new Intent(MainActivity.this, DimmerService.class);
-					intent.setAction(DimmerService.actionUpdateTimer);
-					startService(intent);
+					//this gets executed unnecessarily on orientation change as well
+					//so compare with the existing timer value to 
+					//confirm it is not an orientation change  
+					if(timerValue_old != timerValue_new){
+						Intent intent = new Intent(MainActivity.this, DimmerService.class);
+						intent.setAction(DimmerService.actionUpdateTimer);
+						startService(intent);
+					}
 				}
 				
 					
