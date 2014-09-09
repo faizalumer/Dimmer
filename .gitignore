@@ -7,3 +7,6 @@ gen/
 
 # temporary files
 *~
+
+#commit message template
+myCommitMessage.txt
