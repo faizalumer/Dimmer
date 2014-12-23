@@ -1,28 +1,67 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.theAlternative.dimmer.AboutActivity"
+    android:paddingTop="@dimen/activity_vertical_margin" 
     android:background="@color/dark_brown"
-    android:orientation="vertical"
     >
-    
-    <TextView 
-        android:id="@+id/txt_header_appVersion"
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="@string/header_appVersion"
-        />
-        
+        android:orientation="vertical"
+        android:padding="8dp" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="App version"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/txt_appversion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
     <TextView
-        android:id="@+id/txt_appVersion"
+        android:id="@+id/txt_viewplaystore"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="---"
+        android:layout_marginTop="8dp"
+        android:padding="8dp"
+        android:text="View in play store"
+        android:textSize="22sp"
+        android:background="@drawable/selector_button_background"
         />
+    
+        <LinearLayout
+        android:id="@+id/ll_donate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:layout_marginTop="8dp" 
+        android:background="@drawable/selector_button_background">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Spread the love"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/txt_appversion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:text="Help to keep knowledge free and open for all by considering a donation to the Wikimedia Foundation." />
+    </LinearLayout>
 
 </LinearLayout>

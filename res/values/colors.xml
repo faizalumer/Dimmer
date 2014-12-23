@@ -5,4 +5,9 @@
 	<color name="holo_blue_light">#ff33B5E5</color>
 	<color name="holo_blue_dark">#ff0099cc</color>
 	<color name="dark_brown">#201616</color>
+	<color name="grey">#80333333</color>
+	<color name="dark_grey">#FF333333</color>
+	<color name="light_grey">#cccccc</color>
+	<color name="white">#80FFFFFF</color>
+	<color name="white_opaque">#FFFFFFFF</color>
 </resources>
